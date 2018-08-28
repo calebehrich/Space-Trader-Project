@@ -10,6 +10,9 @@ namespace SpaceTraderProject
     {
         static void Main(string[] args)
         {
+
+            
+            
         }
     }
 }
