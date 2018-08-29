@@ -13,9 +13,10 @@ namespace SpaceTraderProject
         static void Main(string[] args)
         {
 
-            BuyMenu Menu = new BuyMenu();
-            Menu.DisplayInventory();
-            
+            BuyMenu PurchaseMenu = new BuyMenu();
+            PurchaseMenu.DisplayInventory();
+            SellMenu SaleMenu = new SellMenu();
+            SaleMenu.DisplayInventory();
 
             
         }

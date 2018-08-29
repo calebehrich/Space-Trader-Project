@@ -45,7 +45,7 @@
     <Compile Include="BuyMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MethodsRandom.cs" />
+    <Compile Include="ShuffleInfo.cs" />
     <Compile Include="SellMenu.cs" />
   </ItemGroup>
   <ItemGroup>
