@@ -6,19 +6,11 @@ using System.Threading.Tasks;
 
 namespace SpaceTraderProject
 {
-    class MethodsRandom
+    class SellMenu
     {
-        public MethodsRandom()
+        public SellMenu()
         {
 
         }
-
-        
-        
-
-
-
-
-
     }
 }

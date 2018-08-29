@@ -8,10 +8,15 @@ namespace SpaceTraderProject
 {
     class Program
     {
+        
+
         static void Main(string[] args)
         {
 
+            BuyMenu Menu = new BuyMenu();
+            Menu.DisplayInventory();
             
+
             
         }
     }
