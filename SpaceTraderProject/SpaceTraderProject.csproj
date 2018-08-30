@@ -49,6 +49,7 @@
     <Compile Include="ShipGarage.cs" />
     <Compile Include="ShuffleInfo.cs" />
     <Compile Include="SellMenu.cs" />
+    <Compile Include="SpaceShips.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
