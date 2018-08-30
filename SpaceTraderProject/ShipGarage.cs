@@ -8,31 +8,46 @@ namespace SpaceTraderProject
 {
     class ShipGarage
     {
+        SpaceShips newShip = new SpaceShips();
+
         public void DisplayGarage()
         {
-            Console.WriteLine("Pick a ship to buy");
 
-            string shipList = "Type 1 for Intermediate"    + "   "  + "$18000"  + "\n" +
-                              "Max Speed:6  "   + "Max Cargo:50  "  + "Max Fuel:25 " +
-                              "Type 2 for Advanced"        + "   "  + "$100000" + "\n" +
-                              "Max Speed:9  "   + "Max Cargo:100  " + "Max Fuel:50 ";
-
-            Console.WriteLine(shipList);
+            DisplayInstructions();
             int userSelection = int.Parse(Console.ReadLine());
 
             switch (userSelection)
             {
                 case 1:
-                    //Intermediate Ship
+                    newShip.Intermediate();
                     break;
 
                 case 2:
-                    //Advanced Ship
+                    newShip.Advanced();
                     break;
 
+                case 3:
+                    newShip.ChooseSpeedBasic();
+                    break;
+                    
                 default:
                     Console.WriteLine("Invalid Input");
                     break;
+            }
+        }
+
+        public void DisplayInstructions()
+        {
+            Console.Clear();
+            string[] instructions = {"Pick a ship to buy!", " ",
+                                     "Type 1 for Intermediate",
+                                     "Cost: $18000, Max Speed:6, Max Cargo:50, Max Fuel:25", " ",
+                                     "Type 2 for Advanced",
+                                     "Cost: $100000, Max Speed:9, Max Cargo:100, Max Fuel:50", " ",
+                                     "Type 3 to change the speed of your basic ship"};
+            foreach (string line in instructions)
+            {
+                Console.WriteLine(line);
             }
         }
     }
