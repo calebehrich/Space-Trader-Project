@@ -9,6 +9,11 @@ namespace SpaceTraderProject
     class SellMenu
     {
         ShuffleInfo sellPrice = new ShuffleInfo();
+        MoneyMath Money = new MoneyMath();
+        int goldPrice = 0;
+        int silverPrice = 0;
+        int titaniumPrice = 0;
+
 
         public SellMenu()
         {
@@ -18,9 +23,7 @@ namespace SpaceTraderProject
         public string DisplayInventory()
         {
 
-            int goldPrice = 0;
-            int silverPrice = 0;
-            int titaniumPrice = 0;
+            
 
             Console.WriteLine("What would you like to sell?" + "\n" +
                                "Type Gold, Silver, or Titanium to sell the item");
@@ -32,5 +35,29 @@ namespace SpaceTraderProject
             Console.WriteLine(itemList);
             return itemList;
         }
+
+    
+
+        public void SoldItems()
+        { 
+             string userSelection = Console.ReadLine();
+
+             if (userSelection == "Gold")
+             {
+                 Money.MoneyAddition(goldPrice);
+             }
+             else if (userSelection == "Silver")
+             {
+                 Money.MoneyAddition(silverPrice);
+             }
+             else if (userSelection == "Titanium")
+             {
+                 Money.MoneyAddition(titaniumPrice);
+             }
+             else
+             {
+                 Console.WriteLine("Invalid input. Please make a selection");
+             }
     }
+}
 }
