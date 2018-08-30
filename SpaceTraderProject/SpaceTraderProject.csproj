@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuyMenu.cs" />
+    <Compile Include="CargoMath.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="MoneyMath.cs" />
     <Compile Include="Program.cs" />

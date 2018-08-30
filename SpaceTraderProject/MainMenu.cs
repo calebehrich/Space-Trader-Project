@@ -35,8 +35,7 @@ namespace SpaceTraderProject
                     break;
 
                 case 3:
-                    ShipMenu.DisplayGarage();
-                    
+                    ShipMenu.DisplayGarage();                   
                     break;
 
                 default:

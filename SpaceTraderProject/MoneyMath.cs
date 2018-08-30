@@ -10,14 +10,14 @@ namespace SpaceTraderProject
     {
         int userMoney = 10000;
 
-        public void MoneyAddition(int i)
+        public void MoneyAddition(int i, int k)
         {
-            userMoney += i;
+            userMoney += (i*k);
         }
 
-        public void MoneySubtraction(int i)
+        public void MoneySubtraction(int i, int k)
         {
-            userMoney -= i;
+            userMoney -= (i*k);
         }
     }
 }
