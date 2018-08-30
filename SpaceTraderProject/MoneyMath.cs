@@ -14,5 +14,10 @@ namespace SpaceTraderProject
         {
             userMoney += i;
         }
+
+        public void MoneySubtraction(int i)
+        {
+            userMoney -= i;
+        }
     }
 }

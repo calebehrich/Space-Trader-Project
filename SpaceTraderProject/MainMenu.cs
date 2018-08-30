@@ -26,6 +26,7 @@ namespace SpaceTraderProject
             {
                 case 1:
                     PurchaseMenu.DisplayInventory();
+                    PurchaseMenu.BoughtItems();
                     break;
 
                 case 2:
