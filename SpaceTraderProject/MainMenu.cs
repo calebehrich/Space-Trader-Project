@@ -15,11 +15,11 @@ namespace SpaceTraderProject
 
         public void DisplayMenu()
         {
-            Console.WriteLine("Whatcha tryin to do yo?" + "\n" +
-                              "Type 1 to buy" + "\n" +  
-                              "Type 2 to sell" + "\n" +
-                              "Type 3 for SpaceShip Upgrade ");
-
+            Console.WriteLine("Whatcha tryin to do yo?");
+            Console.WriteLine("Type 1 to buy");                  
+            Console.WriteLine("Type 2 to sell");                 
+            Console.WriteLine("Type 3 for SpaceShip Upgrade ");                  
+            Console.WriteLine("Type 4 to quit game");
             int userSelection = int.Parse(Console.ReadLine());
 
             switch (userSelection)
@@ -36,6 +36,10 @@ namespace SpaceTraderProject
 
                 case 3:
                     ShipMenu.DisplayGarage();                   
+                    break;
+                case 4:
+                    Console.WriteLine("GameOver");
+                    Console.ReadLine();
                     break;
 
                 default:

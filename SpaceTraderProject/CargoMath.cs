@@ -8,7 +8,7 @@ namespace SpaceTraderProject
 {
     class CargoMath
     {
-        int userCargo = 50;
+        public int userCargo = 50;
 
         public CargoMath()
         {

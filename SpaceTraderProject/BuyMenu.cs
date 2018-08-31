@@ -8,11 +8,12 @@ namespace SpaceTraderProject
 {
     class BuyMenu
     {
-        ShuffleInfo buyPrice = new ShuffleInfo();
+        MainMenu goBack = new MainMenu();
+        static Random rnd = new Random();
         MoneyMath Money = new MoneyMath();
-        int goldPrice = 0;
-        int silverPrice = 0;
-        int titaniumPrice = 0;
+        int goldPrice = rnd.Next(100, 1001);
+        int silverPrice = rnd.Next(100, 1001);
+        int titaniumPrice = rnd.Next(100, 1001);
 
         public BuyMenu()
         {
@@ -21,17 +22,16 @@ namespace SpaceTraderProject
   
         public string DisplayInventory()
         {
- 
-            int goldPrice = 0;
-            int silverPrice = 0;
-            int titaniumPrice = 0;
 
-            Console.WriteLine("What would you like to buy?" + "\n" +
-                               "Type Gold, Silver, or Titanium to purchase the item");
-
-            string itemList = "Gold"     + "   " + "$" + (buyPrice.ItemPrice(goldPrice))   + "\n" +
-                              "Silver"   + "   " + "$" + (buyPrice.ItemPrice(silverPrice)) + "\n" +
-                              "Titanium" + "   " + "$" + (buyPrice.ItemPrice(titaniumPrice));
+            Console.WriteLine("What would you like to buy?"); 
+            Console.WriteLine("Type 1 for Gold");                  
+            Console.WriteLine("Type 2 for Silver");
+            Console.WriteLine("Type 3 for Titanium");
+            Console.WriteLine("Type 4 for Main Menu");
+            Console.WriteLine(" ");
+            string itemList = "Gold"     + "   " + "$" + (goldPrice)   + "\n" +
+                              "Silver"   + "   " + "$" + (silverPrice) + "\n" +
+                              "Titanium" + "   " + "$" + (titaniumPrice);
    
             Console.WriteLine(itemList);
             return itemList;
@@ -41,17 +41,24 @@ namespace SpaceTraderProject
         {
             string userSelection = Console.ReadLine();
 
-            if (userSelection == "Gold")
+            if (userSelection == "1")
             {
-                Money.MoneyAddition(goldPrice);
+                Money.MoneyAddition(goldPrice, 1);
+                Console.WriteLine(Money.userMoney);
             }
-            else if (userSelection == "Silver")
+            else if (userSelection == "2")
             {
-                Money.MoneyAddition(silverPrice);
+                Money.MoneyAddition(silverPrice, 1);
+                Console.WriteLine(Money.userMoney);
             }
-            else if (userSelection == "Titanium")
+            else if (userSelection == "3")
             {
-                Money.MoneyAddition(titaniumPrice);
+                Money.MoneyAddition(titaniumPrice, 1);
+                Console.WriteLine(Money.userMoney);
+            }
+            else if (userSelection == "4")
+            {
+                goBack.DisplayMenu();                
             }
             else
             {
