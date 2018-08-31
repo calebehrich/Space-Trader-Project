@@ -8,7 +8,7 @@ namespace SpaceTraderProject
 {
     class MoneyMath
     {
-        int userMoney = 10000;
+        public int userMoney = 10000;
 
         public void MoneyAddition(int i, int k)
         {

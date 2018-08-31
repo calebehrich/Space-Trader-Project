@@ -8,18 +8,20 @@ namespace SpaceTraderProject
 {
     class SellMenu
     {
-        ShuffleInfo sellPrice = new ShuffleInfo();
+        static Random rnd = new Random();
+        CargoMath iHopeThisWorks = new CargoMath();      
         MoneyMath Money = new MoneyMath();
-        int goldPrice = 0;
-        int silverPrice = 0;
-        int titaniumPrice = 0;
+        int goldPrice = rnd.Next(100, 1001);
+        int silverPrice = rnd.Next(100, 1001);
+        int titaniumPrice = rnd.Next(100, 1001);
 
 
         public SellMenu()
         {
 
         }
-
+        
+        
         public string DisplayInventory()
         {
 
@@ -28,9 +30,9 @@ namespace SpaceTraderProject
             Console.WriteLine("What would you like to sell?" + "\n" +
                                "Type Gold, Silver, or Titanium to sell the item");
 
-            string itemList = "Gold"     + "   " + "$" + (sellPrice.ItemPrice(goldPrice))   + "\n" +
-                              "Silver"   + "   " + "$" + (sellPrice.ItemPrice(silverPrice)) + "\n" +
-                              "Titanium" + "   " + "$" + (sellPrice.ItemPrice(titaniumPrice));
+            string itemList = "Gold"     + "   " + "$" + (goldPrice)   + "\n" +
+                              "Silver"   + "   " + "$" + (silverPrice) + "\n" +
+                              "Titanium" + "   " + "$" + (titaniumPrice);
 
             Console.WriteLine(itemList);
             return itemList;
@@ -44,15 +46,15 @@ namespace SpaceTraderProject
 
              if (userSelection == "Gold")
              {
-                 Money.MoneyAddition(goldPrice);
+                 Money.MoneyAddition(goldPrice, 1);
              }
              else if (userSelection == "Silver")
              {
-                 Money.MoneyAddition(silverPrice);
+                 Money.MoneyAddition(silverPrice, 1);
              }
              else if (userSelection == "Titanium")
              {
-                 Money.MoneyAddition(titaniumPrice);
+                 Money.MoneyAddition(titaniumPrice, 1);
              }
              else
              {

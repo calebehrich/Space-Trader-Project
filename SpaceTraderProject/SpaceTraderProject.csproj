@@ -49,7 +49,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShipGarage.cs" />
-    <Compile Include="ShuffleInfo.cs" />
     <Compile Include="SellMenu.cs" />
     <Compile Include="SpaceShips.cs" />
   </ItemGroup>
