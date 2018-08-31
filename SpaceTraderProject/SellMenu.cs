@@ -9,8 +9,7 @@ namespace SpaceTraderProject
     class SellMenu
     {
         static Random rnd = new Random();
-        CargoMath iHopeThisWorks = new CargoMath();      
-        MoneyMath Money = new MoneyMath();
+        MoneyMath Money = new MoneyMath();       
         int goldPrice = rnd.Next(100, 1001);
         int silverPrice = rnd.Next(100, 1001);
         int titaniumPrice = rnd.Next(100, 1001);
@@ -20,9 +19,8 @@ namespace SpaceTraderProject
         {
 
         }
-        
-        
-        public string DisplayInventory()
+
+        public string DisplayInventory(SellMenu sellMenu)
         {
 
             
@@ -40,7 +38,7 @@ namespace SpaceTraderProject
 
     
 
-        public void SoldItems()
+        public void SoldItems(SellMenu sellMenu)
         { 
              string userSelection = Console.ReadLine();
 

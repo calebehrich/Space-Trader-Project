@@ -10,7 +10,7 @@ namespace SpaceTraderProject
     {
         SpaceShips newShip = new SpaceShips();
 
-        public void DisplayGarage()
+        public void DisplayGarage(ShipGarage shipGarage)
         {
 
             DisplayInstructions();

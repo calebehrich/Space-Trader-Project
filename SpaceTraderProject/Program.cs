@@ -14,7 +14,11 @@ namespace SpaceTraderProject
         {
 
             MainMenu Menu = new MainMenu();
+            do
+            {
             Menu.DisplayMenu();
+            } while (Menu.Exit == 1);
+
             Console.ReadLine();
    
         }

@@ -8,20 +8,22 @@ namespace SpaceTraderProject
 {
     class BuyMenu
     {
-        MainMenu goBack = new MainMenu();
-        static Random rnd = new Random();
         MoneyMath Money = new MoneyMath();
+        static Random rnd = new Random();         
         int goldPrice = rnd.Next(100, 1001);
         int silverPrice = rnd.Next(100, 1001);
         int titaniumPrice = rnd.Next(100, 1001);
+        public int OtherExit = 0;
 
         public BuyMenu()
         {
 
         }
   
-        public string DisplayInventory()
+        public void DisplayInventory(BuyMenu buyMenu)
         {
+            do
+            {
 
             Console.WriteLine("What would you like to buy?"); 
             Console.WriteLine("Type 1 for Gold");                  
@@ -34,7 +36,8 @@ namespace SpaceTraderProject
                               "Titanium" + "   " + "$" + (titaniumPrice);
    
             Console.WriteLine(itemList);
-            return itemList;
+                BoughtItems();
+            } while (OtherExit == 0);
         }
 
         public void BoughtItems()
@@ -58,7 +61,7 @@ namespace SpaceTraderProject
             }
             else if (userSelection == "4")
             {
-                goBack.DisplayMenu();                
+                OtherExit += 1;             
             }
             else
             {
