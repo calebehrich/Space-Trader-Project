@@ -8,13 +8,14 @@ namespace SpaceTraderProject
 {
     class MainMenu
     {
-        BuyMenu PurchaseMenu = new BuyMenu();
-        SellMenu SaleMenu = new SellMenu();
-        ShipGarage ShipMenu = new ShipGarage();
+        public BuyMenu buyMenu = new BuyMenu();
+        public SellMenu sellMenu = new SellMenu();
+        public ShipGarage shipGarage = new ShipGarage();
+        public int Exit = 0;
         
 
         public void DisplayMenu()
-        {
+        {           
             Console.WriteLine("Whatcha tryin to do yo?");
             Console.WriteLine("Type 1 to buy");                  
             Console.WriteLine("Type 2 to sell");                 
@@ -22,30 +23,35 @@ namespace SpaceTraderProject
             Console.WriteLine("Type 4 to quit game");
             int userSelection = int.Parse(Console.ReadLine());
 
-            switch (userSelection)
+            do
             {
+   
+            switch (userSelection)
+            {                
                 case 1:
-                    PurchaseMenu.DisplayInventory();
-                    PurchaseMenu.BoughtItems();
+                    buyMenu.DisplayInventory(buyMenu);
                     break;
 
                 case 2:
-                    SaleMenu.DisplayInventory();
-                    SaleMenu.SoldItems();
+                    sellMenu.DisplayInventory(sellMenu);
+                    sellMenu.SoldItems(sellMenu);
                     break;
 
                 case 3:
-                    ShipMenu.DisplayGarage();                   
+                    shipGarage.DisplayGarage(shipGarage);                   
                     break;
+
                 case 4:
-                    Console.WriteLine("GameOver");
-                    Console.ReadLine();
+                    Exit += 1;
                     break;
 
                 default:
                     Console.WriteLine("Invalid Input");
                     break;
             }
+
+            } while (buyMenu.OtherExit == 1);
+
         }
 
         
