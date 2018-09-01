@@ -99,7 +99,7 @@ namespace SpaceTraderProject
             {
                 cargo += 1;
                 MainMenu.userCurrentCargo += 1;
-                Console.WriteLine("Your cargo balance for this it cargo type is: " + cargo);
+                Console.WriteLine("Your cargo balance for this cargo type is: " + cargo);
             }
             else
             {
