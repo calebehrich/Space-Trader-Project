@@ -44,50 +44,59 @@ namespace SpaceTraderProject
             {
             Console.Clear();   
             DisplayInventory();
-
-            int userSelection = int.Parse(Console.ReadLine());
-
-                switch (userSelection)
+                try
                 {
-                    case 1:
-                        Console.Clear();
-                        MoneyAddition(goldPrice);
-                        SubtractSpecificCargo(MainMenu.goldCargo);
-                        Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
-                        Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCurrentCargo);
-                        Console.WriteLine("Press 'Enter' to continue");
-                        Console.ReadLine();
-                        break;
+                    int userSelection = int.Parse(Console.ReadLine());
 
-                    case 2:
-                        Console.Clear();
-                        MoneyAddition(silverPrice);
-                        SubtractSpecificCargo(MainMenu.silverCargo);
-                        Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
-                        Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCurrentCargo);
-                        Console.WriteLine("Press 'Enter' to continue");
-                        Console.ReadLine();
-                        break;
+                    switch (userSelection)
+                    {
+                        case 1:
+                            Console.Clear();
+                            MoneyAddition(goldPrice);
+                            SubtractSpecificCargo(MainMenu.goldCargo);
+                            Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
+                            Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCurrentCargo);
+                            Console.WriteLine("Press 'Enter' to continue");
+                            Console.ReadLine();
+                            break;
 
-                    case 3:
-                        Console.Clear();
-                        MoneyAddition(titaniumPrice);
-                        SubtractSpecificCargo(MainMenu.titaniumCargo);
-                        Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
-                        Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCurrentCargo);
-                        Console.WriteLine("Press 'Enter' to continue");
-                        Console.ReadLine();
-                        break;
+                        case 2:
+                            Console.Clear();
+                            MoneyAddition(silverPrice);
+                            SubtractSpecificCargo(MainMenu.silverCargo);
+                            Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
+                            Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCurrentCargo);
+                            Console.WriteLine("Press 'Enter' to continue");
+                            Console.ReadLine();
+                            break;
 
-                    case 4:
-                        return;
-                        
+                        case 3:
+                            Console.Clear();
+                            MoneyAddition(titaniumPrice);
+                            SubtractSpecificCargo(MainMenu.titaniumCargo);
+                            Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
+                            Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCurrentCargo);
+                            Console.WriteLine("Press 'Enter' to continue");
+                            Console.ReadLine();
+                            break;
 
-                    default:
-                        Console.WriteLine("Invalid Input");
-                        break;
+                        case 4:
+                            return;
+
+
+                        default:
+                            Console.WriteLine("Invalid Input");
+                            break;
+
+                    }
                 }
+                catch (System.FormatException)
+                {
 
+                    Console.WriteLine("Please enter one of the options displayed to you");
+                    Console.WriteLine("Press 'Enter' to continue");
+                    Console.ReadLine();
+                }           
 
             } while (true);
         }

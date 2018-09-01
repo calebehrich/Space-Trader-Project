@@ -44,6 +44,8 @@ namespace SpaceTraderProject
             do
             {
                 DisplayInventory();
+                try
+                {
                 int userSelection = int.Parse(Console.ReadLine());
                 switch (userSelection)
                 {
@@ -84,7 +86,15 @@ namespace SpaceTraderProject
                         Console.WriteLine("Invalid input. Please make a selection");
                         break;
                 }
-            } while (true) ;
+            }
+                catch (System.FormatException)
+            {
+
+                Console.WriteLine("Please enter one of the options displayed to you");
+                Console.WriteLine("Press 'Enter' to continue");
+                Console.ReadLine();
+            }
+        } while (true) ;
         }
 
         public double MoneySubtraction(int i)
