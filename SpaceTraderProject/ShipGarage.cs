@@ -10,30 +10,35 @@ namespace SpaceTraderProject
     {
         SpaceShips newShip = new SpaceShips();
 
-        public void DisplayGarage(ShipGarage shipGarage)
+        public void DisplayGarage()
         {
-
+            do
+            {            
             DisplayInstructions();
             int userSelection = int.Parse(Console.ReadLine());
 
             switch (userSelection)
             {
-                case 1:
-                    newShip.Intermediate();
-                    break;
+                    case 1:
+                        newShip.Intermediate();
+                        break;
 
-                case 2:
-                    newShip.Advanced();
-                    break;
+                    case 2:
+                        newShip.Advanced();
+                     break;
 
-                case 3:
-                    newShip.ChooseSpeedBasic();
-                    break;
-                    
-                default:
-                    Console.WriteLine("Invalid Input");
-                    break;
+                    case 3:
+                        newShip.ChooseSpeedBasic();
+                        break;
+
+                    case 4:
+                        return;
+         
+                    default:
+                        Console.WriteLine("Invalid Input");
+                        break;
             }
+            } while (true);
         }
 
         public void DisplayInstructions()

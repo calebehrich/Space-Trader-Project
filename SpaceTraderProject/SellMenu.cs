@@ -8,13 +8,11 @@ namespace SpaceTraderProject
 {
     class SellMenu
     {
-        static Random rnd = new Random();
-        MoneyMath Money = new MoneyMath();
-        MainMenu MainMenu = new MainMenu();
+        static Random rnd = new Random();       
         int goldPrice = rnd.Next(100, 1001);
         int silverPrice = rnd.Next(100, 1001);
         int titaniumPrice = rnd.Next(100, 1001);
-        int Exit = 0;
+        
 
         public SellMenu()
         {
@@ -51,24 +49,23 @@ namespace SpaceTraderProject
                 switch (userSelection)
                 {
                     case 1:
-                        Money.MoneyAddition(goldPrice, 1);
-                        Console.WriteLine(Money.userMoney);
+                        MoneyAddition(goldPrice, 1);
+                        Console.WriteLine(MainMenu.userMoney);
                         break;
 
                     case 2:
-                        Money.MoneyAddition(silverPrice, 1);
-                        Console.WriteLine(Money.userMoney);
+                        MoneyAddition(silverPrice, 1);
+                        Console.WriteLine(MainMenu.userMoney);
                         break;
 
                     case 3:
-                        Money.MoneyAddition(titaniumPrice, 1);
-                        Console.WriteLine(Money.userMoney);
+                        MoneyAddition(titaniumPrice, 1);
+                        Console.WriteLine(MainMenu.userMoney);
                         break;
 
                     case 4:
-                        Exit += 1;
-                        MainMenu.DisplayMenu();
-                        break;
+                        return;
+                        
 
                     default:
                         Console.WriteLine("Invalid Input");
@@ -76,7 +73,13 @@ namespace SpaceTraderProject
                 }
 
 
-            } while (Exit == 1);
+            } while (true);
+        }
+
+        public int MoneyAddition(int i, int k)
+        {
+            MainMenu.userMoney += (i * k);
+            return MainMenu.userMoney;
         }
     }
 }

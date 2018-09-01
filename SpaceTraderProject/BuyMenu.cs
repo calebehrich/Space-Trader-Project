@@ -8,22 +8,21 @@ namespace SpaceTraderProject
 {
     class BuyMenu
     {
-        MoneyMath Money = new MoneyMath();
+        
         static Random rnd = new Random();         
         int goldPrice = rnd.Next(100, 1001);
         int silverPrice = rnd.Next(100, 1001);
         int titaniumPrice = rnd.Next(100, 1001);
-        public int OtherExit = 0;
+       
 
         public BuyMenu()
         {
 
         }
   
-        public void DisplayInventory(BuyMenu buyMenu)
+        public void DisplayInventory()
         {
-            do
-            {
+          
 
             Console.WriteLine("What would you like to buy?"); 
             Console.WriteLine("Type 1 for Gold");                  
@@ -36,38 +35,49 @@ namespace SpaceTraderProject
                               "Titanium" + "   " + "$" + (titaniumPrice);
    
             Console.WriteLine(itemList);
-                BoughtItems();
-            } while (OtherExit == 0);
+                
+            
         }
 
         public void BoughtItems()
         {
-            string userSelection = Console.ReadLine();
+            do
+            {
+                DisplayInventory();
+                string userSelection = Console.ReadLine();
 
             if (userSelection == "1")
             {
-                Money.MoneyAddition(goldPrice, 1);
-                Console.WriteLine(Money.userMoney);
+                MoneySubtraction(goldPrice, 1);
+                Console.WriteLine(MainMenu.userMoney);                   
             }
             else if (userSelection == "2")
             {
-                Money.MoneyAddition(silverPrice, 1);
-                Console.WriteLine(Money.userMoney);
+                MoneySubtraction(silverPrice, 1);
+                Console.WriteLine(MainMenu.userMoney);
             }
             else if (userSelection == "3")
             {
-                Money.MoneyAddition(titaniumPrice, 1);
-                Console.WriteLine(Money.userMoney);
+                MoneySubtraction(titaniumPrice, 1);
+                Console.WriteLine(MainMenu.userMoney);
             }
             else if (userSelection == "4")
             {
-                OtherExit += 1;             
+                    return;             
             }
             else
             {
                 Console.WriteLine("Invalid input. Please make a selection");
             }
+            } while (true) ;
         }
+
+        public int MoneySubtraction(int i, int k)
+        {
+            MainMenu.userMoney -= (i * k);
+            return MainMenu.userMoney;
+        }
+        
 
     }
 }
