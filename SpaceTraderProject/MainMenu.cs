@@ -11,7 +11,7 @@ namespace SpaceTraderProject
         public BuyMenu buyMenu = new BuyMenu();
         public SellMenu sellMenu = new SellMenu();
         public ShipGarage shipGarage = new ShipGarage();
-        public int Exit = 0;
+        int Exit = 0;
         
 
         public void DisplayMenu()
@@ -33,8 +33,7 @@ namespace SpaceTraderProject
                     break;
 
                 case 2:
-                    sellMenu.DisplayInventory(sellMenu);
-                    sellMenu.SoldItems(sellMenu);
+                    sellMenu.SoldItems();
                     break;
 
                 case 3:
@@ -50,7 +49,7 @@ namespace SpaceTraderProject
                     break;
             }
 
-            } while (buyMenu.OtherExit == 1);
+            } while (Exit != 0);
 
         }
 

@@ -13,20 +13,20 @@ namespace SpaceTraderProject
         int goldPrice = rnd.Next(100, 1001);
         int silverPrice = rnd.Next(100, 1001);
         int titaniumPrice = rnd.Next(100, 1001);
-
+        int Exit = 0;
 
         public SellMenu()
         {
 
         }
 
-        public string DisplayInventory(SellMenu sellMenu)
+        public string DisplayInventory()
         {
-
-            
-
-            Console.WriteLine("What would you like to sell?" + "\n" +
-                               "Type Gold, Silver, or Titanium to sell the item");
+            Console.WriteLine("What would you like to sell?");
+            Console.WriteLine("Type 1 for Gold");
+            Console.WriteLine("Type 2 for Silver");
+            Console.WriteLine("Type 3 for Titanium");
+            Console.WriteLine("Type 4 for Main Menu");
 
             string itemList = "Gold"     + "   " + "$" + (goldPrice)   + "\n" +
                               "Silver"   + "   " + "$" + (silverPrice) + "\n" +
@@ -38,8 +38,13 @@ namespace SpaceTraderProject
 
     
 
-        public void SoldItems(SellMenu sellMenu)
-        { 
+        public void SoldItems()
+        {
+            do
+            {
+                
+             DisplayInventory();   
+            
              string userSelection = Console.ReadLine();
 
              if (userSelection == "Gold")
@@ -58,6 +63,8 @@ namespace SpaceTraderProject
              {
                  Console.WriteLine("Invalid input. Please make a selection");
              }
+
+            } while (Exit != 0);
+        }
     }
-}
 }
