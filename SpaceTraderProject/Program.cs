@@ -14,7 +14,9 @@ namespace SpaceTraderProject
         {
 
             MainMenu Menu = new MainMenu();         
-            Menu.DisplayMenu();      
+            Menu.DisplayMenu();
+            Console.Clear();
+            Console.WriteLine("GAME OVER!");
             Console.ReadLine();
    
         }

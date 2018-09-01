@@ -49,7 +49,7 @@ namespace SpaceTraderProject
                     break;
             }
 
-            } while (Exit != 0);
+            } while (Exit == 1);
 
         }
 
