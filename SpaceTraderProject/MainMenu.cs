@@ -29,24 +29,27 @@ namespace SpaceTraderProject
             switch (userSelection)
             {                
                 case 1:
-                    buyMenu.DisplayInventory(buyMenu);
+                        buyMenu.DisplayInventory(buyMenu);
+                        DisplayMenu();
                     break;
 
                 case 2:
-                    sellMenu.SoldItems();
-                    break;
+                        sellMenu.SoldItems();
+                        DisplayMenu();
+                        break;
 
                 case 3:
-                    shipGarage.DisplayGarage(shipGarage);                   
-                    break;
+                        shipGarage.DisplayGarage(shipGarage);
+                        DisplayMenu();
+                        break;
 
                 case 4:
-                    Exit += 1;
-                    break;
+                        Exit += 1;
+                        break;
 
                 default:
-                    Console.WriteLine("Invalid Input");
-                    break;
+                        Console.WriteLine("Invalid Input");
+                        break;
             }
 
             } while (Exit == 1);

@@ -9,7 +9,8 @@ namespace SpaceTraderProject
     class SellMenu
     {
         static Random rnd = new Random();
-        MoneyMath Money = new MoneyMath();       
+        MoneyMath Money = new MoneyMath();
+        MainMenu MainMenu = new MainMenu();
         int goldPrice = rnd.Next(100, 1001);
         int silverPrice = rnd.Next(100, 1001);
         int titaniumPrice = rnd.Next(100, 1001);
@@ -66,6 +67,7 @@ namespace SpaceTraderProject
 
                     case 4:
                         Exit += 1;
+                        MainMenu.DisplayMenu();
                         break;
 
                     default:
