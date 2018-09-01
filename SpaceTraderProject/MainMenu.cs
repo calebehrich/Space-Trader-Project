@@ -27,28 +27,38 @@ namespace SpaceTraderProject
             {
                 Console.Clear();
                 MenuInstructions();
-                int userSelection = int.Parse(Console.ReadLine());
-                switch (userSelection)
-            {                
-                case 1:
-                        buyMenu.BoughtItems();                       
-                        break;
+                try
+                { 
+                    int userSelection = int.Parse(Console.ReadLine());
+                    switch (userSelection)
+                    {                
+                    case 1:
+                            buyMenu.BoughtItems();                       
+                            break;
 
-                case 2:
-                        sellMenu.SoldItems();                        
-                        break;
+                    case 2:
+                            sellMenu.SoldItems();                        
+                            break;
 
-                case 3:
-                        shipGarage.DisplayGarage();                       
-                        break;
+                    case 3:
+                            shipGarage.DisplayGarage();                       
+                            break;
 
-                case 4:
-                        return;
+                    case 4:
+                            return;
 
-                default:
-                        Console.WriteLine("Invalid Input");
-                        break;
-            }
+                    default:
+                            Console.WriteLine("Invalid Input");
+                            break;
+                }
+                }
+                catch (System.FormatException)
+                {
+
+                    Console.WriteLine("Please enter one of the options displayed to you");
+                    Console.WriteLine("Press 'Enter' to continue");
+                    Console.ReadLine();
+                }
 
             } while (true);
 
@@ -56,7 +66,7 @@ namespace SpaceTraderProject
 
         public void MenuInstructions()
         {
-            Console.WriteLine("Whatcha tryin to do yo?");
+            Console.WriteLine("What would you like to do?");
             Console.WriteLine("Type 1 to buy");
             Console.WriteLine("Type 2 to sell");
             Console.WriteLine("Type 3 for SpaceShip Upgrade ");
