@@ -54,7 +54,7 @@ namespace SpaceTraderProject
                         MoneyAddition(goldPrice, 1);
                         CargoSubtraction(1);
                         Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
-                        Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCargo);
+                        Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCurrentCargo);
                         break;
 
                     case 2:
@@ -62,7 +62,7 @@ namespace SpaceTraderProject
                         MoneyAddition(silverPrice, 1);
                         CargoSubtraction(1);
                         Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
-                        Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCargo);
+                        Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCurrentCargo);
                         break;
 
                     case 3:
@@ -70,7 +70,7 @@ namespace SpaceTraderProject
                         MoneyAddition(titaniumPrice, 1);
                         CargoSubtraction(1);
                         Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
-                        Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCargo);
+                        Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCurrentCargo);
                         break;
 
                     case 4:
@@ -94,7 +94,7 @@ namespace SpaceTraderProject
 
         public double CargoSubtraction(int k)
         {
-            return MainMenu.userCargo -= k;
+            return MainMenu.userCurrentCargo -= k;
         }
     }
 }

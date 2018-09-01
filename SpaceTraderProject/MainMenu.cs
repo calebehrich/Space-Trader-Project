@@ -12,7 +12,11 @@ namespace SpaceTraderProject
         public SellMenu sellMenu = new SellMenu();
         public ShipGarage shipGarage = new ShipGarage();
         static public double userMoney = 10000;
-        static public double userCargo = 50;
+        static public double userCurrentCargo = 50;
+        static public double userMaxCargo = 50;
+        static public double goldCargo = 0;
+        static public double silverCargo = 0;
+        static public double titaniumCargo = 0;
 
 
         public void DisplayMenu()
@@ -21,6 +25,7 @@ namespace SpaceTraderProject
 
             do
             {
+                Console.Clear();
                 MenuInstructions();
                 int userSelection = int.Parse(Console.ReadLine());
                 switch (userSelection)
@@ -57,6 +62,8 @@ namespace SpaceTraderProject
             Console.WriteLine("Type 3 for SpaceShip Upgrade ");
             Console.WriteLine("Type 4 to quit game");
         }
+
+        
 
         
     }

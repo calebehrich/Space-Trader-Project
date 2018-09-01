@@ -22,8 +22,8 @@ namespace SpaceTraderProject
   
         public void DisplayInventory()
         {
-          
 
+            Console.Clear();
             Console.WriteLine("What would you like to buy?"); 
             Console.WriteLine("Type 1 for Gold");                  
             Console.WriteLine("Type 2 for Silver");
@@ -49,26 +49,32 @@ namespace SpaceTraderProject
                 {
                     case 1:                        
                        Console.Clear();
-                       MoneySubtraction(goldPrice, 1);
-                       CargoAddition(1);
+                       MoneySubtraction(goldPrice);                      
+                       AddSpecificCargo(MainMenu.goldCargo);
                        Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
-                       Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCargo);
+                       Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCurrentCargo);
+                       Console.WriteLine("Press 'Enter' to continue");
+                       Console.ReadLine();
                         break;
 
                     case 2:           
                        Console.Clear();
-                       MoneySubtraction(silverPrice, 1);
-                       CargoAddition(1);
+                       MoneySubtraction(silverPrice);                       
+                       AddSpecificCargo(MainMenu.goldCargo);
                        Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
-                       Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCargo);
+                       Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCurrentCargo);
+                       Console.WriteLine("Press 'Enter' to continue");
+                       Console.ReadLine();
                         break;
 
                     case 3:            
                        Console.Clear();
-                       MoneySubtraction(titaniumPrice, 1);
-                       CargoAddition(1);
+                       MoneySubtraction(titaniumPrice);                       
+                       AddSpecificCargo(MainMenu.goldCargo);
                        Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
-                       Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCargo);
+                       Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCurrentCargo);
+                       Console.WriteLine("Press 'Enter' to continue");
+                       Console.ReadLine();
                         break;
 
                     case 4:            
@@ -81,15 +87,24 @@ namespace SpaceTraderProject
             } while (true) ;
         }
 
-        public double MoneySubtraction(int i, int k)
+        public double MoneySubtraction(int i)
         {
-            MainMenu.userMoney -= (i * k);
+            MainMenu.userMoney -= i;
             return MainMenu.userMoney;
         }
 
-        public double CargoAddition(int k)
+        public void AddSpecificCargo(double cargo)
         {
-            return MainMenu.userCargo += k;
+            if (MainMenu.userCurrentCargo < MainMenu.userMaxCargo)
+            {
+                cargo += 1;
+                MainMenu.userCurrentCargo += 1;
+                Console.WriteLine("Your cargo balance for this it cargo type is: " + cargo);
+            }
+            else
+            {
+                Console.WriteLine("Not enough cargo space");
+            }
         }
 
 
