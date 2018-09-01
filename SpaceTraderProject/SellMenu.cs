@@ -26,6 +26,7 @@ namespace SpaceTraderProject
             Console.WriteLine("Type 2 for Silver");
             Console.WriteLine("Type 3 for Titanium");
             Console.WriteLine("Type 4 for Main Menu");
+            Console.WriteLine(" ");
 
             string itemList = "Gold"     + "   " + "$" + (goldPrice)   + "\n" +
                               "Silver"   + "   " + "$" + (silverPrice) + "\n" +
@@ -49,18 +50,27 @@ namespace SpaceTraderProject
                 switch (userSelection)
                 {
                     case 1:
+                        Console.Clear();
                         MoneyAddition(goldPrice, 1);
-                        Console.WriteLine(MainMenu.userMoney);
+                        CargoSubtraction(1);
+                        Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
+                        Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCargo);
                         break;
 
                     case 2:
+                        Console.Clear();
                         MoneyAddition(silverPrice, 1);
-                        Console.WriteLine(MainMenu.userMoney);
+                        CargoSubtraction(1);
+                        Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
+                        Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCargo);
                         break;
 
                     case 3:
+                        Console.Clear();
                         MoneyAddition(titaniumPrice, 1);
-                        Console.WriteLine(MainMenu.userMoney);
+                        CargoSubtraction(1);
+                        Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
+                        Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCargo);
                         break;
 
                     case 4:
@@ -76,10 +86,15 @@ namespace SpaceTraderProject
             } while (true);
         }
 
-        public int MoneyAddition(int i, int k)
+        public double MoneyAddition(int i, int k)
         {
             MainMenu.userMoney += (i * k);
             return MainMenu.userMoney;
+        }
+
+        public double CargoSubtraction(int k)
+        {
+            return MainMenu.userCargo -= k;
         }
     }
 }

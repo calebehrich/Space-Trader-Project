@@ -49,16 +49,19 @@ namespace SpaceTraderProject
             if (userSelection == "1")
             {
                 MoneySubtraction(goldPrice, 1);
+                CargoAddition(1);
                 Console.WriteLine(MainMenu.userMoney);                   
             }
             else if (userSelection == "2")
             {
                 MoneySubtraction(silverPrice, 1);
+                CargoAddition(1);
                 Console.WriteLine(MainMenu.userMoney);
             }
             else if (userSelection == "3")
             {
                 MoneySubtraction(titaniumPrice, 1);
+                CargoAddition(1);
                 Console.WriteLine(MainMenu.userMoney);
             }
             else if (userSelection == "4")
@@ -72,12 +75,17 @@ namespace SpaceTraderProject
             } while (true) ;
         }
 
-        public int MoneySubtraction(int i, int k)
+        public double MoneySubtraction(int i, int k)
         {
             MainMenu.userMoney -= (i * k);
             return MainMenu.userMoney;
         }
-        
+
+        public double CargoAddition(int k)
+        {
+            return MainMenu.userCargo += k;
+        }
+
 
     }
 }
