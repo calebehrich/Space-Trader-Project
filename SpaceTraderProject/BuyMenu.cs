@@ -44,40 +44,40 @@ namespace SpaceTraderProject
             do
             {
                 DisplayInventory();
-                string userSelection = Console.ReadLine();
+                int userSelection = int.Parse(Console.ReadLine());
+                switch (userSelection)
+                {
+                    case 1:                        
+                       Console.Clear();
+                       MoneySubtraction(goldPrice, 1);
+                       CargoAddition(1);
+                       Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
+                       Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCargo);
+                        break;
 
-            if (userSelection == "1")
-            {
-                Console.Clear();
-                MoneySubtraction(goldPrice, 1);
-                CargoAddition(1);
-                Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
-                Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCargo);
-            }
-            else if (userSelection == "2")
-            {
-                Console.Clear();
-                MoneySubtraction(silverPrice, 1);
-                CargoAddition(1);
-                Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
-                Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCargo);
-            }
-            else if (userSelection == "3")
-            {
-                Console.Clear();
-                MoneySubtraction(titaniumPrice, 1);
-                CargoAddition(1);
-                Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
-                Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCargo);
-            }
-            else if (userSelection == "4")
-            {
-                    return;             
-            }
-            else
-            {
-                Console.WriteLine("Invalid input. Please make a selection");
-            }
+                    case 2:           
+                       Console.Clear();
+                       MoneySubtraction(silverPrice, 1);
+                       CargoAddition(1);
+                       Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
+                       Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCargo);
+                        break;
+
+                    case 3:            
+                       Console.Clear();
+                       MoneySubtraction(titaniumPrice, 1);
+                       CargoAddition(1);
+                       Console.WriteLine("Your new money balance is: $" + MainMenu.userMoney);
+                       Console.WriteLine("Your new Cargo Balance is: " + MainMenu.userCargo);
+                        break;
+
+                    case 4:            
+                        return;             
+ 
+                    default:
+                        Console.WriteLine("Invalid input. Please make a selection");
+                        break;
+                }
             } while (true) ;
         }
 
