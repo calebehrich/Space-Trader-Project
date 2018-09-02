@@ -12,34 +12,57 @@ namespace SpaceTraderProject
         {
 
         }
-      
-        public void Basic()
+
+        public void TryIntermediateSpaceshipPurchase(int cost)
         {
-            Console.WriteLine("Speed must be between 1 and 4");
-            ChooseSpeedBasic();           
+            if (MainMenu.userMoney > cost)
+            {
+                MainMenu.userMoney -= cost;
+                MainMenu.userMaxCargo = 100;
+                MainMenu.MaxFuel = 25;
+                Console.WriteLine("You purchased this ship for $" + cost);
+                Console.WriteLine("");
+                ChooseSpeedIntermediate();
+            }
+            else
+            {
+                Console.WriteLine("You don't have enough money to purchase this ship!");
+                Console.WriteLine("Press 'Enter' to continue");
+                Console.ReadLine();
+            }
         }
 
-        public void Intermediate()
+        public void TryAdvancedSpaceshipPurchase(int cost)
         {
-            Console.WriteLine("Speed must be between 1 and 6");
-            ChooseSpeedIntermediate();            
+            if (MainMenu.userMoney > cost)
+            {
+                MainMenu.userMoney -= cost;
+                MainMenu.userMaxCargo = 150;
+                MainMenu.MaxFuel = 50;
+                Console.WriteLine("You purchased this ship for $" + cost);
+                Console.WriteLine("");
+                ChooseSpeedAdvanced();
+            }
+            else
+            {
+                Console.WriteLine("You don't have enough money to purchase this ship!");
+                Console.WriteLine("Press 'Enter' to continue");
+                Console.ReadLine();
+            }
         }
-        
-        public void Advanced()
-        {
-            Console.WriteLine("Speed must be between 1 and 9");
-            ChooseSpeedAdvanced();            
-        }
+
 
         public void ChooseSpeedBasic()
         {
+            
             Console.WriteLine("Select a speed for your SpaceShip");
+            Console.WriteLine("Speed must be between 1 and 4");
             int selectedSpeed = int.Parse(Console.ReadLine());
             if (selectedSpeed > 0 && selectedSpeed <= 4)
             {
-                int speed = selectedSpeed;
+                MainMenu.ShipSpeed = selectedSpeed;
                 Console.Clear();
-                Console.WriteLine("Your ship now has a speed of: " + speed);
+                Console.WriteLine("Your ship now has a speed of: " + selectedSpeed);
             }
             else
             {
@@ -50,12 +73,13 @@ namespace SpaceTraderProject
         public void ChooseSpeedIntermediate()
         {
             Console.WriteLine("Select a speed for your SpaceShip");
+            Console.WriteLine("Speed must be between 1 and 6");
             int selectedSpeed = int.Parse(Console.ReadLine());
             if (selectedSpeed > 0 && selectedSpeed <= 6)
             {
-                int speed = selectedSpeed;
+                MainMenu.ShipSpeed = selectedSpeed;
                 Console.Clear();
-                Console.WriteLine("Your ship now has a speed of: " + speed);
+                Console.WriteLine("Your ship now has a speed of: " + selectedSpeed);
             }
             else
             {
@@ -66,12 +90,13 @@ namespace SpaceTraderProject
         public void ChooseSpeedAdvanced()
         {
             Console.WriteLine("Select a speed for your SpaceShip");
+            Console.WriteLine("Speed must be between 1 and 9");
             int selectedSpeed = int.Parse(Console.ReadLine());
             if (selectedSpeed > 0 && selectedSpeed <= 9)
             {
-                int speed = selectedSpeed;
+                MainMenu.ShipSpeed = selectedSpeed;
                 Console.Clear();
-                Console.WriteLine("Your ship now has a speed of: " + speed);
+                Console.WriteLine("Your ship now has a speed of: " + selectedSpeed);
             }
             else
             {

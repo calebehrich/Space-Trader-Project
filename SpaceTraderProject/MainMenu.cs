@@ -14,6 +14,8 @@ namespace SpaceTraderProject
         static public double userMoney = 10000;
         static public double userCurrentCargo = 0;
         static public double userMaxCargo = 50;
+        static public int MaxFuel = 10;
+        static public int ShipSpeed = 1;
         static public double goldCargo = 0;
         static public double silverCargo = 0;
         static public double titaniumCargo = 0;
