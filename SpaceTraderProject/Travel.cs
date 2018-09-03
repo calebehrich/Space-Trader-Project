@@ -22,7 +22,7 @@ namespace SpaceTraderProject
 
             foreach (Planets planets in Planet)
             {
-                Console.WriteLine(Planet);
+                Console.WriteLine(Planet.ToString());
                 Console.ReadLine();
             }
         } 
