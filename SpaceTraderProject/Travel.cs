@@ -12,6 +12,7 @@ namespace SpaceTraderProject
 
         public void DisplayPlanets()
         {
+            Console.Clear();
             Planets[] Planet = new Planets[8];
             Planet[0] = new Planets("Earth", 0, 0);
             Planet[1] = new Planets("Pluto", 15, 20);
@@ -24,17 +25,20 @@ namespace SpaceTraderProject
 
             currentPlanet = Planet[0];
 
-            Console.WriteLine(currentPlanet.PlanetName());
+            Console.WriteLine("Your current planet is : " + currentPlanet.PlanetName());
+            Console.WriteLine("");
+            Console.WriteLine("Type the number of the planet you want to go to");
+            Console.WriteLine("");
 
-            Console.WriteLine(Planet[0].PlanetName());
-            Console.WriteLine(Planet[1].PlanetName());
-            Console.WriteLine(Planet[2].PlanetName());
-            Console.WriteLine(Planet[3].PlanetName());
-            Console.WriteLine(Planet[4].PlanetName());
-            Console.WriteLine(Planet[5].PlanetName());
-            Console.WriteLine(Planet[6].PlanetName());
-            Console.WriteLine(Planet[7].PlanetName());
-            Console.ReadLine();
+            Console.WriteLine("1  " + Planet[0].PlanetName());
+            Console.WriteLine("2  " + Planet[1].PlanetName());
+            Console.WriteLine("3  " + Planet[2].PlanetName());
+            Console.WriteLine("4  " + Planet[3].PlanetName());
+            Console.WriteLine("5  " + Planet[4].PlanetName());
+            Console.WriteLine("6  " + Planet[5].PlanetName());
+            Console.WriteLine("7  " + Planet[6].PlanetName());
+            Console.WriteLine("8  " + Planet[7].PlanetName());
+            int travelChoice = int.Parse(Console.ReadLine());
         } 
         
         
