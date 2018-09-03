@@ -50,6 +50,7 @@
     <Compile Include="ShipGarage.cs" />
     <Compile Include="SellMenu.cs" />
     <Compile Include="SpaceShips.cs" />
+    <Compile Include="Travel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
