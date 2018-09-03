@@ -11,7 +11,7 @@ namespace SpaceTraderProject
         public BuyMenu buyMenu = new BuyMenu();
         public SellMenu sellMenu = new SellMenu();
         public ShipGarage shipGarage = new ShipGarage();
-        static public double userMoney = 10000;
+        static public double userMoney = 1000000;
         static public double userCurrentCargo = 0;
         static public double userMaxCargo = 50;
         static public int MaxFuel = 10;

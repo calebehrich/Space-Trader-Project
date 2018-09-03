@@ -20,7 +20,7 @@ namespace SpaceTraderProject
                 switch (userSelection)
                 {
                     case 1:
-                        newShip.TryIntermediateSpaceshipPurchase(18000);
+                        newShip.TryIntermediateSpaceshipPurchase(18000);                   
                         break;
 
                     case 2:
