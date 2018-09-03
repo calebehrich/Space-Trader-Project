@@ -8,6 +8,8 @@ namespace SpaceTraderProject
 {
     class Travel
     {
+        public static Planets currentPlanet;
+
         public void DisplayPlanets()
         {
             Planets[] Planet = new Planets[8];
@@ -20,12 +22,21 @@ namespace SpaceTraderProject
             Planet[6] = new Planets("M63", 16, 3);
             Planet[7] = new Planets("P34", -9, 6);
 
-            foreach (Planets planets in Planet)
-            {
-                Console.WriteLine(Planet.ToString());
-                Console.ReadLine();
-            }
+            currentPlanet = Planet[0];
+
+            Console.WriteLine(currentPlanet.PlanetName());
+
+            Console.WriteLine(Planet[0].PlanetName());
+            Console.WriteLine(Planet[1].PlanetName());
+            Console.WriteLine(Planet[2].PlanetName());
+            Console.WriteLine(Planet[3].PlanetName());
+            Console.WriteLine(Planet[4].PlanetName());
+            Console.WriteLine(Planet[5].PlanetName());
+            Console.WriteLine(Planet[6].PlanetName());
+            Console.WriteLine(Planet[7].PlanetName());
+            Console.ReadLine();
         } 
+        
         
     }
 }
