@@ -39,6 +39,37 @@ namespace SpaceTraderProject
             Console.WriteLine("7  " + Planet[6].PlanetName());
             Console.WriteLine("8  " + Planet[7].PlanetName());
             int travelChoice = int.Parse(Console.ReadLine());
+
+            switch (travelChoice)
+            {
+                case 1:
+                    currentPlanet = Planet[0];
+                    break;
+                case 2:
+                    currentPlanet = Planet[1];
+                    break;
+                case 3:
+                    currentPlanet = Planet[2];
+                    break;
+                case 4:
+                    currentPlanet = Planet[3];
+                    break;
+                case 5:
+                    currentPlanet = Planet[4];
+                    break;
+                case 6:
+                    currentPlanet = Planet[5];
+                    break;
+                case 7:
+                    currentPlanet = Planet[6];
+                    break;
+                case 8:
+                    currentPlanet = Planet[7];
+                    break;
+                default:
+                    Console.WriteLine("You did not choose a correct planet");
+                    break;
+            }
         } 
         
         
