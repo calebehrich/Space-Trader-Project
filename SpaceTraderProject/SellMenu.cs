@@ -8,10 +8,10 @@ namespace SpaceTraderProject
 {
     class SellMenu
     {
-        static Random rnd = new Random();       
-        int goldPrice = rnd.Next(100, 1001);
-        int silverPrice = rnd.Next(100, 1001);
-        int titaniumPrice = rnd.Next(100, 1001);
+        public static Random rnd = new Random();       
+        public static int goldPrice = rnd.Next(100, 1001);
+        public static int silverPrice = rnd.Next(100, 1001);
+        public static int titaniumPrice = rnd.Next(100, 1001);
         
 
         public SellMenu()
@@ -52,17 +52,23 @@ namespace SpaceTraderProject
                     {
                         case 1:
                             Console.Clear();
-                            MoneyAddition(goldPrice, MainMenu.goldCargo);                                                       
+                            MoneyAddition(goldPrice, MainMenu.goldCargo);
+                            SubtractGoldCargo();
+                            DisplayStats(MainMenu.goldCargo);
                             break;
 
                         case 2:
                             Console.Clear();
-                            MoneyAddition(silverPrice, MainMenu.silverCargo);                                                       
+                            MoneyAddition(silverPrice, MainMenu.silverCargo);
+                            SubtractSilverCargo();
+                            DisplayStats(MainMenu.silverCargo);                           
                             break;
 
                         case 3:
                             Console.Clear();
-                            MoneyAddition(titaniumPrice, MainMenu.titaniumCargo);                                                        
+                            MoneyAddition(titaniumPrice, MainMenu.titaniumCargo);
+                            SubtractTitaniumCargo();
+                            DisplayStats(MainMenu.titaniumCargo);
                             break;
 
                         case 4:
@@ -90,14 +96,7 @@ namespace SpaceTraderProject
         {
             if (cargo > 0)
             {
-                MainMenu.userMoney += i;
-                cargo -= 1;
-                MainMenu.userCurrentCargo -= 1;
-                Console.WriteLine("Your cargo balance for this cargo type is: " + cargo);
-                Console.WriteLine("Your Money balance is: $" + MainMenu.userMoney);
-                Console.WriteLine("Your Cargo Balance is: " + MainMenu.userCurrentCargo);
-                Console.WriteLine("Press 'Enter' to continue");
-                Console.ReadLine();
+                MainMenu.userMoney += i;             
             }
             else
             {
@@ -107,6 +106,61 @@ namespace SpaceTraderProject
             }
             
         }
+
+        public double SubtractGoldCargo()
+        {
+            if (MainMenu.goldCargo > 0)
+            {
+                MainMenu.goldCargo -= 1;
+                MainMenu.userCurrentCargo -= 1;
+                return MainMenu.goldCargo;
+            }
+            else
+            {
+                Console.WriteLine("You dont have any cargo of this type");
+                return MainMenu.goldCargo;
+            }
+        }
+
+        public double SubtractSilverCargo()
+        {
+            if (MainMenu.silverCargo > 0)
+            {
+                MainMenu.silverCargo -= 1;
+                MainMenu.userCurrentCargo -= 1;
+                return MainMenu.silverCargo;
+            }
+            else
+            {
+                Console.WriteLine("You dont have any cargo of this type");
+                return MainMenu.silverCargo;
+            }
+        }
+
+        public double SubtractTitaniumCargo()
+        {
+            if (MainMenu.titaniumCargo > 0)
+            {
+                MainMenu.titaniumCargo -= 1;
+                MainMenu.userCurrentCargo -= 1;
+                return MainMenu.titaniumCargo;
+            }
+            else
+            {
+                Console.WriteLine("You dont have any cargo of this type");
+                return MainMenu.titaniumCargo;
+            }
+        }
+
+        public void DisplayStats(double cargo)
+        {
+            Console.WriteLine("Your cargo balance for this cargo type is: " + cargo);
+            Console.WriteLine("Your Money balance is: $" + MainMenu.userMoney);
+            Console.WriteLine("Your Cargo Balance is: " + MainMenu.userCurrentCargo);
+            Console.WriteLine("Press 'Enter' to continue");
+            Console.ReadLine();
+        }
+        
        
        
     }

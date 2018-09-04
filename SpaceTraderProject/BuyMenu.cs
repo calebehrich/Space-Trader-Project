@@ -8,12 +8,6 @@ namespace SpaceTraderProject
 {
     class BuyMenu
     {
-        
-        static Random rnd = new Random();         
-        int goldPrice = rnd.Next(100, 1001);
-        int silverPrice = rnd.Next(100, 1001);
-        int titaniumPrice = rnd.Next(100, 1001);
-       
 
         public BuyMenu()
         {
@@ -30,9 +24,9 @@ namespace SpaceTraderProject
             Console.WriteLine("Type 3 for Titanium");
             Console.WriteLine("Type 4 for Main Menu");
             Console.WriteLine(" ");
-            string itemList = "Gold"     + "   " + "$" + (goldPrice)   + "\n" +
-                              "Silver"   + "   " + "$" + (silverPrice) + "\n" +
-                              "Titanium" + "   " + "$" + (titaniumPrice);
+            string itemList = "Gold"     + "   " + "$" + (SellMenu.goldPrice)   + "\n" +
+                              "Silver"   + "   " + "$" + (SellMenu.silverPrice) + "\n" +
+                              "Titanium" + "   " + "$" + (SellMenu.titaniumPrice);
    
             Console.WriteLine(itemList);
                 
@@ -51,21 +45,24 @@ namespace SpaceTraderProject
                 {
                     case 1:                        
                        Console.Clear();
-                       MoneySubtraction(goldPrice);                      
-                       AddSpecificCargo(MainMenu.goldCargo);                       
+                       MoneySubtraction(SellMenu.goldPrice);
+                       AddGoldCargo();
+                       DisplayNewStats(MainMenu.goldCargo);
                         break;
 
                     case 2:           
                        Console.Clear();
-                       MoneySubtraction(silverPrice);                       
-                       AddSpecificCargo(MainMenu.goldCargo);                      
-                        break;
+                       MoneySubtraction(SellMenu.silverPrice);
+                       AddSilverCargo();
+                       DisplayNewStats(MainMenu.silverCargo);
+                         break;
 
                     case 3:            
                        Console.Clear();
-                       MoneySubtraction(titaniumPrice);                       
-                       AddSpecificCargo(MainMenu.goldCargo);                      
-                        break;
+                       MoneySubtraction(SellMenu.titaniumPrice);
+                       AddTitaniumCargo();
+                       DisplayNewStats(MainMenu.titaniumCargo);
+                         break;
 
                     case 4:            
                         return;             
@@ -100,24 +97,58 @@ namespace SpaceTraderProject
             
         }
 
-        public void AddSpecificCargo(double cargo)
+        public double AddGoldCargo()
         {
             if (MainMenu.userCurrentCargo < MainMenu.userMaxCargo)
             {
-                cargo += 1;
+                MainMenu.goldCargo += 1;
                 MainMenu.userCurrentCargo += 1;
-                Console.WriteLine("Your cargo balance for this cargo type is: " + cargo);
-                Console.WriteLine("Your Money balance is: $" + MainMenu.userMoney);
-                Console.WriteLine("Your Cargo Balance is: " + MainMenu.userCurrentCargo);
-                Console.WriteLine("Press 'Enter' to continue");
-                Console.ReadLine();
+                return MainMenu.goldCargo;
             }
             else
             {
                 Console.WriteLine("Not enough cargo space");
-                Console.WriteLine("Press 'Enter' to continue");
-                Console.ReadLine();
+                return MainMenu.goldCargo;
             }
+        }
+
+        public double AddSilverCargo()
+        {
+            if (MainMenu.userCurrentCargo < MainMenu.userMaxCargo)
+            {
+                MainMenu.silverCargo += 1;
+                MainMenu.userCurrentCargo += 1;
+                return MainMenu.silverCargo;
+            }
+            else
+            {
+                Console.WriteLine("Not enough cargo space");
+                return MainMenu.silverCargo;
+            }
+        }
+
+        public double AddTitaniumCargo()
+        {
+            if (MainMenu.userCurrentCargo < MainMenu.userMaxCargo)
+            {
+                MainMenu.titaniumCargo += 1;
+                MainMenu.userCurrentCargo += 1;
+                return MainMenu.titaniumCargo;
+            }
+            else
+            {
+                Console.WriteLine("Not enough cargo space");
+                return MainMenu.titaniumCargo;
+            }
+        }
+
+        public void DisplayNewStats(double cargo)
+        {
+            Console.WriteLine("You now have " + cargo +" of this item");
+            Console.WriteLine("You now have $" + MainMenu.userMoney);
+            Console.WriteLine("Your total cargo is: " + MainMenu.userCurrentCargo);
+            Console.WriteLine("Press 'Enter' to continue");
+            Console.ReadLine();
         }
 
 
