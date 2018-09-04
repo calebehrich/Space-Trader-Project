@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuyMenu.cs" />
+    <Compile Include="GameStory.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="Planets.cs" />
     <Compile Include="Program.cs" />

@@ -12,7 +12,7 @@ namespace SpaceTraderProject
         {
 
         }
-
+        //allow user to upgrade ships
         public void TryIntermediateSpaceshipPurchase(int cost)
         {
             if (MainMenu.userMoney > cost)

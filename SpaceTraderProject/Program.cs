@@ -12,8 +12,10 @@ namespace SpaceTraderProject
 
         static void Main(string[] args)
         {
-
-            MainMenu Menu = new MainMenu();         
+            GameStory Story = new GameStory();
+            MainMenu Menu = new MainMenu();
+            Story.DisplayGameStory();
+            Story.DisplayGameDirections();
             Menu.DisplayMenu();
             Console.Clear();
             Console.WriteLine("GAME OVER!");

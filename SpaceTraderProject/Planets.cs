@@ -12,7 +12,7 @@ namespace SpaceTraderProject
         double xcord;
         double ycord;
         
-
+        //generate planets
         public Planets(string planetName, double planetXCord, double planetYCord)
 
         {

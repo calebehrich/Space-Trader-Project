@@ -18,7 +18,7 @@ namespace SpaceTraderProject
         {
 
         }
-
+        //display items to sell
         public string DisplayInventory()
         {
             Console.WriteLine("What would you like to sell?");
@@ -37,7 +37,7 @@ namespace SpaceTraderProject
         }
 
     
-
+        //apply math based on user selection
         public void SoldItems()
         {
             do

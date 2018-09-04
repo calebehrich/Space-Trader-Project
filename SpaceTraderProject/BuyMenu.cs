@@ -16,7 +16,7 @@ namespace SpaceTraderProject
   
         public void DisplayInventory()
         {
-
+            //display goods to purchase
             Console.Clear();
             Console.WriteLine("What would you like to buy?"); 
             Console.WriteLine("Type 1 for Gold");                  
@@ -32,7 +32,7 @@ namespace SpaceTraderProject
                 
             
         }
-
+        //apply math based on user selection
         public void BoughtItems()
         {
             do

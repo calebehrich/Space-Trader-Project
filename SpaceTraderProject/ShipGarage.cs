@@ -10,7 +10,7 @@ namespace SpaceTraderProject
     {
         
         SpaceShips newShip = new SpaceShips();
-
+        //store ship stats 
         public void DisplayGarage()
         {
                       

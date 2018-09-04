@@ -21,6 +21,12 @@ namespace SpaceTraderProject
         static public double silverCargo = 0;
         static public double titaniumCargo = 0;
 
+      
+
+
+
+        //hub for user
+
         public void DisplayMenu()
         {           
             
