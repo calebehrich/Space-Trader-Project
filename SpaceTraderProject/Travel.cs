@@ -47,6 +47,11 @@ namespace SpaceTraderProject
                     break;
                 case 2:
                     currentPlanet = Planet[1];
+                    //A new random has to be made for each planet so the prices change
+                    Random srt = new Random();
+                    SellMenu.goldPrice = srt.Next(100, 1001);
+                    SellMenu.silverPrice = srt.Next(100, 1001);
+                    SellMenu.titaniumPrice = srt.Next(100, 1001);
                     break;
                 case 3:
                     currentPlanet = Planet[2];
