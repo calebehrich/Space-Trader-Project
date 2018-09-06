@@ -40,7 +40,7 @@ namespace SpaceTraderProject
             string directions = "In this game you will be SpaceTraver and travel between planets buying and selling cargo" + "\n" +
                                 "to make as much money as possible." + "\n" +
 
-                                "You will start the game with $1,000,000." + "\n" +
+                                "You will start the game with $1,000,000." + "\n" + "\n" +
 
                                 "- There are eight planets." + "\n" +
 
@@ -48,14 +48,14 @@ namespace SpaceTraderProject
     
                                  "-Each planet will have its own economy." + "\n" +
     
-                                 "-Traveling will cause time to pass." + "\n" +
+                                 "-Traveling will cause time to pass." + "\n" + "\n" +
 
 
                                 "- You will begin with a Basic Ship" + "\n" +
 
                                  "-Ability to upgrade ship at Trading Posts." + "\n" +
 
-                                "-Each upgrade will increase speed of travel and cargo capacity." + "\n" +
+                                "-Each upgrade will increase speed of travel and cargo capacity." + "\n" + "\n" +
 
                                 "Game will end when:" + "\n" +
 
