@@ -14,12 +14,8 @@ namespace SpaceTraderProject
         {
             GameStory Story = new GameStory();
             MainMenu Menu = new MainMenu();
-            Story.DisplayGameStory();
-            Console.ReadLine();
-            Console.Clear();
-            Story.DisplayGameDirections();
-            Console.ReadLine();
-            Console.Clear();
+            Story.DisplayGameStory();           
+            Story.DisplayGameDirections();           
             Menu.DisplayMenu();
             Console.Clear();
             Console.WriteLine("GAME OVER!");
